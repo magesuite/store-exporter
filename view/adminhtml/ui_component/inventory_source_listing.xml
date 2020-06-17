@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <settings>
+        <buttons>
+            <button name="export">
+                <url path="store_exporter/source/exportToCsv"/>
+                <class>primary</class>
+                <label translate="true">Export to CSV</label>
+            </button>
+        </buttons>
+    </settings>
+<!--    <listingToolbar name="listing_top">-->
+<!--        <massaction name="listing_massaction">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>-->
+<!--                    <item name="indexField" xsi:type="string">source_code</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--            <action name="export_to_csv">-->
+<!--                <settings>-->
+<!--                    <confirm>-->
+<!--                        <message translate="true">This operation may take some time depending on amount of inventory sources selected.</message>-->
+<!--                        <title translate="true">Export to CSV</title>-->
+<!--                    </confirm>-->
+<!--                    <url path="store_exporter/source/exportToCsv"/>-->
+<!--                    <type>export</type>-->
+<!--                    <label translate="true">Export to CSV</label>-->
+<!--                </settings>-->
+<!--            </action>-->
+<!--        </massaction>-->
+<!--    </listingToolbar>-->
+</listing>
