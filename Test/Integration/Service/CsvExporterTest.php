@@ -2,7 +2,7 @@
 
 namespace MageSuite\StoreExporter\Test\Integration\Service;
 
-class CsvExporterTests extends \PHPUnit\Framework\TestCase
+class CsvExporterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Magento\Framework\App\ObjectManager
