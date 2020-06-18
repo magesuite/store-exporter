@@ -25,9 +25,9 @@ class CsvExporter
     }
 
     public function export(\Magento\Inventory\Model\ResourceModel\Source\Collection $sourceCollection, $fileName) {
-
         $preparedData = $this->prepareInventorySourceCollention($sourceCollection);
-        $this->saveDataAsCsv($preparedData, $fileName);
+
+        return $this->saveDataAsCsv($preparedData, $fileName);
     }
 
     protected function prepareInventorySourceCollention(\Magento\Inventory\Model\ResourceModel\Source\Collection $sourceCollection) {
