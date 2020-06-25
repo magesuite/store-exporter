@@ -2,7 +2,7 @@
 
 namespace MageSuite\StoreExporter\Test\Integration\Service;
 
-class CsvExporterTests extends \PHPUnit\Framework\TestCase
+class CsvConverterTests extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Magento\Framework\App\ObjectManager
@@ -10,9 +10,9 @@ class CsvExporterTests extends \PHPUnit\Framework\TestCase
     protected $objectManager;
 
     /**
-     * @var \MageSuite\StoreExporter\Service\Source\CsvExporter
+     * @var \MageSuite\StoreExporter\Service\ConverterFactory
      */
-    private $csvExporter;
+    private $coverterFactory;
 
     /**
      * @var \Magento\Inventory\Model\ResourceModel\Source\CollectionFactory
@@ -34,7 +34,7 @@ class CsvExporterTests extends \PHPUnit\Framework\TestCase
         parent::setUp();
 
         $this->objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $this->csvExporter = $this->objectManager->get(\MageSuite\StoreExporter\Service\Source\CsvExporter::class);
+        $this->coverterFactory = $this->objectManager->get(\MageSuite\StoreExporter\Service\ConverterFactory::class);
         $this->collectionFactory = $this->objectManager->get(\Magento\Inventory\Model\ResourceModel\Source\CollectionFactory::class);
         $this->filesystem = $this->objectManager->get(\Magento\Framework\Filesystem::class);
         $this->csvProcessor = $this->objectManager->get(\Magento\Framework\File\Csv::class);
@@ -44,12 +44,14 @@ class CsvExporterTests extends \PHPUnit\Framework\TestCase
      * @magentoDataFixture loadSources
      * @magentoAppArea adminhtml
      * @magentoAppIsolation enabled
+     * @magentoConfigFixture current_store default/store_exporter/general/export_file_type csv
      */
     public function testExport()
     {
-        $csvFileName = 'inventory_source_test.csv';
+        $csvCoverter = $this->coverterFactory->create();
         $inventorySourceCollection = $this->collectionFactory->create();
-        $filePath = $this->csvExporter->export($inventorySourceCollection, $csvFileName);
+        $csvCoverter->convert($inventorySourceCollection);
+        $filePath = $csvCoverter->getFilePath();
         $data = $this->csvProcessor->getData($filePath);
 
         $this->assertEquals($data, $this->getExpectedResult());

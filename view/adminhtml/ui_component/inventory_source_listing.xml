@@ -4,9 +4,9 @@
     <settings>
         <buttons>
             <button name="export">
-                <url path="store_exporter/source/exportToCsv"/>
+                <url path="store_exporter/source/export"/>
                 <class>primary</class>
-                <label translate="true">Export to CSV</label>
+                <label translate="true">Export</label>
             </button>
         </buttons>
     </settings>
