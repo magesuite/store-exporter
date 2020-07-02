@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="store_exporter" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>StoreExporter</label>
+            <tab>magesuite</tab>
+            <resource>MageSuite_StoreExporter::config_store_exporter</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="export_file_type" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Export File Type</label>
+                    <comment>Choose between file types (default is .csv)</comment>
+                    <source_model>MageSuite\StoreExporter\Model\Config\Source\ConverterType</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
