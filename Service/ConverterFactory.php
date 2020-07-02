@@ -35,4 +35,8 @@ class ConverterFactory
 
         return $this->convertersMap[$exportType];
     }
+
+    public function getConvertersMap(){
+        return $this->convertersMap;
+    }
 }
