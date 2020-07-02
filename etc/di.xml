@@ -8,5 +8,14 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="MageSuite\StoreExporter\Model\Config\Source\ConverterType">
+        <arguments>
+            <argument name="convertersType" xsi:type="array">
+                <item name="csv" xsi:type="string">Csv</item>
+                <item name="xml" xsi:type="string">Xml</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
 

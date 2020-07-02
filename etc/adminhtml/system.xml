@@ -8,8 +8,8 @@
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <field id="export_file_type" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Export File Type</label>
-                    <comment>Choose between .csv and .xml type (default is .csv)</comment>
-                    <source_model>MageSuite\StoreExporter\Model\Config\Source\ExportType</source_model>
+                    <comment>Choose between file types (default is .csv)</comment>
+                    <source_model>MageSuite\StoreExporter\Model\Config\Source\ConverterType</source_model>
                 </field>
             </group>
         </section>

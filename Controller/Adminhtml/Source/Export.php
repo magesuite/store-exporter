@@ -31,6 +31,6 @@ class Export extends \Magento\Backend\App\Action
         $inventorySourceCollection = $this->collectionFactory->create();
         $converter->convert($inventorySourceCollection);
 
-        return $converter->getFile();
+        return $converter->getFileResponse();
     }
 }
