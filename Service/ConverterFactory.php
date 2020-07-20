@@ -5,7 +5,7 @@ namespace MageSuite\StoreExporter\Service;
 class ConverterFactory
 {
     /**
-     * @var \MageSuite\OrderExport\Helper\Configuration
+     * @var \MageSuite\StoreExporter\Helper\Configuration
      */
     protected $configuration;
 
@@ -15,7 +15,7 @@ class ConverterFactory
     protected $convertersMap;
 
     public function __construct(
-        \MageSuite\OrderExport\Helper\Configuration $configuration,
+        \MageSuite\StoreExporter\Helper\Configuration $configuration,
         array $convertersMap
     ) {
         $this->configuration = $configuration;
