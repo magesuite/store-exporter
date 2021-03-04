@@ -2,7 +2,7 @@
 
 namespace MageSuite\StoreExporter\Test\Integration\Service;
 
-class CsvConverterTests extends \PHPUnit\Framework\TestCase
+class CsvConverterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Magento\Framework\App\ObjectManager
@@ -29,7 +29,7 @@ class CsvConverterTests extends \PHPUnit\Framework\TestCase
      */
     protected $csvProcessor;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
