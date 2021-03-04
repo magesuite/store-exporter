@@ -48,8 +48,10 @@ class CsvConverterTest extends \PHPUnit\Framework\TestCase
         $filePath = $csvConverter->getFilePath();
         $data = file_get_contents($filePath);
 
+        $assertContains = method_exists($this, 'assertStringContainsString') ? 'assertStringContainsString' : 'assertContains';
+        
         foreach ($this->getExpectedSourcesData() as $index => $item) {
-            $this->assertContains($item, $data);
+            $this->$assertContains($item, $data);
         }
 
         $dir = $this->filesystem->getDirectoryWrite(\Magento\Framework\App\Filesystem\DirectoryList::VAR_DIR);
