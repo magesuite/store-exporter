@@ -66,13 +66,13 @@ class CsvConverterTest extends \PHPUnit\Framework\TestCase
     protected function getExpectedSourcesData()
     {
         return [
-            'source_code,name,enabled,description,latitude,longitude,country_id,region_id,region,city,street,postcode',
+            'source_code,name,enabled,description,latitude,longitude,country_id,region_id,region,city,street,postcode,contact_name,email,phone',
             'default,"Default Source",1,"Default Source",0.000000,0.000000,US,,,,,00000',
-            'eu-1,EU-source-1,1,,,,FR,,,,,postcode',
-            'eu-2,EU-source-2,1,,,,FR,,,,,postcode',
-            'eu-3,EU-source-3,1,,,,DE,,,,,postcode',
-            'eu-disabled,EU-source-disabled,0,,,,DE,,,,,postcode',
-            'us-1,US-source-1,1,,,,US,,,,,postcode'
+            'eu-1,EU-source-1,1,,,,DE,,,city-1,street-1,postcode-1,,,111111111',
+            'eu-2,EU-source-2,1,,,,DE,,,city-2,street-2,postcode-2,,,222222222',
+            'eu-3,EU-source-3,1,,,,FR,,,city-3,street-3,postcode-3,,,333333333',
+            'eu-disabled,EU-source-disabled,0,,,,FR,,,city-4,street-4,postcode-4,,,444444444',
+            'us-1,US-source-1,1,,,,US,,,city-5,street-5,postcode-5,,,555555555',
         ];
     }
 }
