@@ -49,7 +49,7 @@ class CsvConverterTest extends \PHPUnit\Framework\TestCase
         $data = file_get_contents($filePath);
 
         $assertContains = method_exists($this, 'assertStringContainsString') ? 'assertStringContainsString' : 'assertContains';
-        
+
         foreach ($this->getExpectedSourcesData() as $index => $item) {
             $this->$assertContains($item, $data);
         }
